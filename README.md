@@ -1,4 +1,4 @@
-## dev-team
+# dev-team
 
 This project represents the OpenTelemetry Demo in rehydrated form and kustomized.
 
@@ -9,11 +9,11 @@ This project will be used with demo projects showing Flux bringing in an externa
 
 ## how to deploy this project directly (vs. using Flux to deploy it)
 
-clone the repo
+Clone the repo;
 
-cd into the top level directory
+CD into the top level directory;
 
-test the output (note no patches are applied, so demo is the same as base):
+Test the output (note no patches are applied, so "demo" is the same as base):
 ```
 kustomize build opentelemetry-demo/demo
 ```
@@ -28,8 +28,11 @@ deploy the demo into a cluster (note that without Alloy available at alloy.colle
 kustomize build opentelemetry-demo/demo | kubectl apply -f -
 ```
 
+OTel Demo should load into your cluster at this point; again just the microservices, not the additional O11y stack.
 
-### teardown 
+<br>
+
+## teardown 
 ```
 kubectl delete namespace open-telemetry
 ```
