@@ -23,7 +23,7 @@ create a namespace:
 kubectl create namespace open-telemetry
 ```
 
-deploy the demo into a cluster (note that without Alloy available at collector.alloy, the services will write error logs that they can't ship their telemetry):
+deploy the demo into a cluster (note that without Alloy available at alloy.collector, the services will write error logs that they can't ship their telemetry):
 ```
 kustomize build opentelemetry-demo/demo | kubectl apply -f -
 ```
