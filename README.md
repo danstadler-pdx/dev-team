@@ -4,6 +4,37 @@ This project represents the OpenTelemetry Demo in rehydrated form and kustomized
 
 This project will be used with demo projects showing Flux bringing in an external repo for application code.
 
+
+<br>
+
+## how to deploy this project directly (vs. using Flux to deploy it)
+
+clone the repo
+
+cd into the top level directory
+
+test the output (note no patches are applied, so demo is the same as base):
+```
+kustomize build opentelemetry-demo/demo
+```
+
+create a namespace:
+```
+kubectl create namespace open-telemetry
+```
+
+deploy the demo into a cluster (note that without Alloy available at collector.alloy, the services will write error logs that they can't ship their telemetry):
+```
+kustomize build opentelemetry-demo/demo | kubectl apply -f -
+```
+
+
+### teardown 
+```
+kubectl delete namespace open-telemetry
+```
+
+
 <br>
 
 ## how this was created
