@@ -1,8 +1,23 @@
 # dev-team
 
-This project represents the OpenTelemetry Demo in rehydrated form and kustomized.
+This project is based on the [OpenTelemetry Demo](https://opentelemetry.io/docs/demo/architecture/).
 
-This project will be used with demo projects showing Flux bringing in an external repo for application code.
+In this project, the OTel Demo's Helm chart has been rehydrated into manifests, and [kustomize](https://github.com/kubernetes-sigs/kustomize) has been set up alongside them.
+
+The kustomization includes a normal "base" directory, as well as one overlay called "demo".
+
+The rehydration has already removed the OTel Demo's built-in Observability stack. See further down for how that was done. This means that the deployments do not include:
+- OTel Collector
+- Jaeger
+- Prometheus
+- OpenSearch
+- Grafana
+
+Instead, this deployment of the OTel Demo assumes that you will be running Grafana Alloy behind a K8s Service at "alloy.collector". It is OK to run the project without Alloy ready; you will just get error logs from the services about not being able to ship their telemetry.
+
+This project is being used by other demo projects, showing how Flux can first stand up your infrastructure (Alloy, telemetry backends, etc.), and then bring in kustomized application manifests from an external repo (this project).
+
+FWIW: It is intentional here that the OTel Demo is structured as K8s manifests and Kustomize files; i.e. not by the Demo's Helm chart. This is for demonstration purposes.
 
 
 <br>
