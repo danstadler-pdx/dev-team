@@ -2,7 +2,18 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 namespace: open-telemetry
-resources:
-  - component.yaml
-  - flagd-config.yaml
-  - serviceaccount.yaml
+resources: []
+  # - component.yaml
+  # - flagd-config.yaml
+  # - serviceaccount.yaml
+
+## notes on the above resource list:
+
+# if all the items are commented, and an empty array is there,
+# then the demo is being run, and the infra stack is not yet
+# fully provisioned and ready.
+
+# if the empty array is removed, and the manifest list is uncommmented,
+# then the demo is showing how the dev team has been signalled
+# by the ops/infra team that the cluster is ready for the microservices
+# to be deployed.
