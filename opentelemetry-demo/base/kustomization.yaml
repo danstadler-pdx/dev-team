@@ -9,6 +9,7 @@ resources: []
 #   - component.yaml
 #   - flagd-config.yaml
 #   - serviceaccount.yaml
+#   - component-loadgen.yaml    # include this if you want the load generator
 
 ## notes on the above resource list:
 
