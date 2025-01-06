@@ -5,7 +5,7 @@ namespace: open-telemetry
 
 resources: []
 
-resources:
+# resources:
   # - component.yaml
   # - flagd-config.yaml
   # - serviceaccount.yaml
