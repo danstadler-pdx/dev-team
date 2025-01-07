@@ -101,9 +101,9 @@ spec:
           resources:
             limits:
               cpu: "2"
-              memory: 1800Mi
+              memory: 1500Mi
             reuqests:
               cpu: 1
-              memory: 1Gi
+              memory: 300Mi
       #     volumeMounts:
       # volumes:
