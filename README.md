@@ -35,7 +35,7 @@ kustomize build opentelemetry-demo/demo
 
 create a namespace:
 ```
-kubectl create namespace open-telemetry
+kubectl create namespace oteldemo
 ```
 
 deploy the demo into a cluster (note that without Alloy available at alloy.collector, the services will write error logs that they can't ship their telemetry):
@@ -90,7 +90,7 @@ Then run `helm template` as follows (change the helm chart version as you see fi
 ```
 helm template otel-demo open-telemetry/opentelemetry-demo \
   --version 0.33.8 \
-  --namespace otel-demo \
+  --namespace oteldemo \
   --values ./oteldemo-values.yaml \
   --output-dir=./oteldemo-output
 ```
