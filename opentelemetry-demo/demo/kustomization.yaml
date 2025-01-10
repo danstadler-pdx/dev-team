@@ -4,4 +4,7 @@ kind: Kustomization
 namespace: oteldemo
 resources:
   - ../base
-patches: []
+patches:
+- path: patch-deployments-node-selector.yaml
+  target:
+    kind: Deployment
