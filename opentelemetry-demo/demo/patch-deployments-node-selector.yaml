@@ -6,4 +6,4 @@ spec:
   template:
     spec:
       nodeSelector:
-        cloud.google.com/gke-nodepool: medium-nodes
+        cloud.google.com/gke-nodepool: primary-nodes
